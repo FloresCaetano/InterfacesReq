@@ -1,0 +1,283 @@
+@import '../styles/globals.css';
+
+/* AuditorDashboard.css */
+
+/* Variables CSS heredan del root */
+:root {
+  --primary-color: #003366;
+  --secondary-color: #0066cc;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #dc2626;
+  --info-color: #0ea5e9;
+  --light-bg: #f8fafc;
+  --white: #ffffff;
+  --text-dark: #1f2937;
+  --text-medium: #6b7280;
+  --border-color: #e5e7eb;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos generales */
+.auditor-dashboard {
+  min-height: 100vh;
+  background: var(--surface-background);
+  font-family: var(--font-family);
+}
+
+/* Header */
+.auditor-header {
+  background: var(--primary-gradient);
+  color: var(--white);
+  padding: var(--spacing-lg) var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.auditor-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.header-right .user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+/* Navegación */
+.auditor-nav {
+  background: var(--white);
+  padding: 0 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-medium);
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-btn:hover {
+  color: var(--primary-color);
+}
+
+.nav-btn.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* Contenido principal */
+.auditor-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sección de exportación */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Grid de reportes */
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.report-card {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.report-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 51, 102, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.report-content h3 {
+  margin: 0 0 0.5rem;
+  color: var(--text-dark);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.report-content p {
+  margin: 0 0 1.5rem;
+  color: var(--text-medium);
+  font-size: 0.875rem;
+}
+
+/* Botón de exportar */
+.generate-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.generate-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Dashboard de métricas (opcional lectura) */
+.audit-dashboard {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
+}
+
+.audit-dashboard h3 {
+  margin: 0 0 1.5rem;
+  color: var(--text-dark);
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric-card {
+  background: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.metric-card h4 {
+  margin: 0 0 0.75rem;
+  color: var(--text-medium);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auditor-header, .auditor-content {
+    padding: 1rem;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .reports-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
